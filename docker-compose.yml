@@ -4,7 +4,7 @@ services:
     build: ./docker/mysql
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - db-store:/var/lib/mysql
+      - ./mysql_db:/var/lib/mysql
     ports:
       - 3308:3306
 
@@ -32,4 +32,4 @@ services:
         - db
 
 volumes:
-  db-store:
+  mysql_db:
